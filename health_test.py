@@ -1,7 +1,12 @@
-from PyQt5.QtCore import Qt
+'''from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget , QApplication , QPushButton ,QLabel , QVBoxLayout
+from my_app import *
 
 app = QApplication([])
+
+window = MainWin()
+window.show()
+
 
 window = QWidget()
 
@@ -25,4 +30,6 @@ line1.addWidget(button1, alignment = Qt.AlignCenter)
 
 window.setLayout(line1)
 
+
 app.exec_()
+'''
