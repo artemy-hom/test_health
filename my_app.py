@@ -23,21 +23,27 @@ class MainWin(QWidget):
         self.resize(win_width,win_height)
 
     def init_UI(self):
+        self._next_button = QPushButton(nxt_button, self)
+
         self.hello_text = QLabel(hi_text)
         self.rules_text = QLabel(rule_text)
 
-        self._next_button = QPushButton(nxt_button, self)
+
 
         self.line = QVBoxLayout()
+        self.line.addWidget(self.hello_text, alignment = Qt.AlignCenter)    
+        self.line.addWidget(self.rules_text, alignment = Qt.AlignCenter)
+        self.line.addWidget(self._next_button, alignment = Qt.AlignCenter)
+        self.setLayout(self.line)
+    def connects(self):
+        self._next_button.clicked.connect(self.next_click)
 
-        self.line.addLayout(self.hello_text, alignment = Qt.AlignCenter)
-        self.line.addLayout(self.rules_text, alignment = Qt.AlignCenter)
-        self.line.addLayout(self._next_button, alignment = Qt.AlignCenter)
+    def next_click(self):
+        self.tw = TestWin()
+        self.hide()
 
-#    def connects(self):
-#        self._next_button.clicked.connect(self.next_click)
-
-#    def next_click(self):
+    class TestWin(QWidget):
+        print('---')
 
 
 
