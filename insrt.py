@@ -1,5 +1,5 @@
 txt_title = 'гига'
-win_width, win_height = 700, 400
+win_width, win_height = 1000, 600
 win_x, win_y = 200, 100
 
 hi_text = ' '*9 +'Добро пожаловать'

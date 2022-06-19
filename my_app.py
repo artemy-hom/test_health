@@ -29,7 +29,6 @@ class MainWin(QWidget):
         self.rules_text = QLabel(rule_text)
 
 
-
         self.line = QVBoxLayout()
         self.line.addWidget(self.hello_text, alignment = Qt.AlignCenter)    
         self.line.addWidget(self.rules_text, alignment = Qt.AlignCenter)
@@ -39,7 +38,7 @@ class MainWin(QWidget):
         self._next_button.clicked.connect(self.next_click)
 
     def next_click(self):
-        self.tw=TestWin()
+        self.tw = TestWin()
         self.hide()
 
 
