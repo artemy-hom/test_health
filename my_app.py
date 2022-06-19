@@ -2,7 +2,7 @@ from ctypes import alignment
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget , QApplication , QPushButton ,QLabel , QVBoxLayout
 from insrt import  *
-
+from second_win import *
 
 
 
@@ -12,7 +12,7 @@ class MainWin(QWidget):
 
 
         self.init_UI()
-        #self.connects()
+        self.connects()
         self.set_apear()
         self.show()
 
@@ -39,11 +39,11 @@ class MainWin(QWidget):
         self._next_button.clicked.connect(self.next_click)
 
     def next_click(self):
-        self.tw = TestWin()
+        self.tw=TestWin()
         self.hide()
 
-    class TestWin(QWidget):
-        print('---')
+
+
 
 
 
