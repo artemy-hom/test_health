@@ -3,6 +3,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget , QApplication , QPushButton ,QLabel , QVBoxLayout
 from insrt import  *
 from second_win import *
+from final_win import *
 
 
 
