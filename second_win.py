@@ -1,8 +1,15 @@
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QTimer, QTime, QLocale
+from PyQt5.QtGui import QDoubleValidator, QIntValidator, QFont
 from PyQt5.QtWidgets import QApplication, QWidget,QHBoxLayout, QVBoxLayout,QGroupBox, QRadioButton,QPushButton, QLabel, QListWidget, QLineEdit
 from insrt import *
 from final_win import *
 
+'''class Experiment():
+    def __init__(self, age, test1, test2, test3):
+        self.age = age
+        self.t1 = test1
+        self.t2 = test2
+        self.t3 = test3'''
 
 class TestWin(QWidget):
     def __init__(self):
@@ -18,9 +25,6 @@ class TestWin(QWidget):
         # старт:
         self.show()
 
-    def next_click(self):
-        self.fw = FinalWin()
-        self.hide()
 
     def connects(self):
         self.btn_next.clicked.connect(self.next_click)
@@ -47,7 +51,9 @@ class TestWin(QWidget):
         self.text_test1 = QLabel(txt_test1)
         self.text_test2 = QLabel(txt_test2)
         self.text_test3 = QLabel(txt_test3)
+
         self.text_timer = QLabel(txt_timer)
+        self.text_timer.setFont(QFont('Times',36,QFont.Bold))
         #================
 
         #================
@@ -98,20 +104,33 @@ class TestWin(QWidget):
         self.setLayout(self.r_line)
 
     def next_click(self):
-        fw = FinalWin
+        self.fwin = FinalWin()
         self.hide()
 
     def connects(self):
         self.btn_next.clicked.connect(self.next_click)
-
+        self.btn_test1.clicked.connect(self.timer_test)
 
     def set_appear(self):
         self.setWindowTitle(txt_title)
         self.move(win_x,win_y)
         self.resize(win_width,win_height)
+    
+    def timer_test(self):
+        global time
+        time = QTime(0,0,15)
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.timer1Event)
+        self.timer.start(1000)
 
-
-
+    def timer1Event(self):
+        global time
+        time = time.addSecs(-1)
+        self.text_timer.setText(time.toString('hh:mm:ss'))
+        self.text_timer.setFont(QFont('Times',36,QFont.Bold))
+        self.text_timer.setStyleSheet('color: rgb(0,0,0)')
+        if time.toString('hh:mm:ss') == '00:00:00':
+            self.timer.stop()
 
 
 
