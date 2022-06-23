@@ -161,5 +161,8 @@ class TestWin(QWidget):
         self.text_timer.setStyleSheet('color: rgb(0,0,0)')
         if time.toString('hh:mm:ss') == '00:00:00':
             self.timer3.stop()
-
+        elif time.toString('hh:mm:ss') >= '00:00:45':
+            self.text_timer.setStyleSheet('color: rgb(0,255,0)')
+        elif time.toString('hh:mm:ss') <= '00:00:15':
+            self.text_timer.setStyleSheet('color: rgb(0,255,0)')
 
