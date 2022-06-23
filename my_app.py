@@ -24,6 +24,7 @@ class MainWin(QWidget):
         self.resize(win_width,win_height)
 
     def init_UI(self):
+        
         self._next_button = QPushButton(nxt_button, self)
 
         self.hello_text = QLabel(hi_text)

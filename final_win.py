@@ -9,80 +9,85 @@ class FinalWin(QWidget):
     def __init__(self,tresult):
         super().__init__()
         self.tresult = tresult
+        self.age = int(self.tresult.age)
+        self.health_index = (4*(float(self.tresult.t1)+float(self.tresult.t2)+float(self.tresult.t3))-200)/10
+        self.tupoe_govno()
         self.initUI()
         self.set_appear()
         self.show()
+        
+
+    def  all_variables(self):
+        print(self.age)
 
 
 
-        self.age = int(self.tresult.age)
-
-    '''def tupoe_govo(self):
-        if int(self.tresult.age) >= 15:
-            if self.health_index2 >=15:
+    def tupoe_govno(self):
+        if self.age >= 15:
+            if self.health_index >=15:
                 self.health_stat = 'Низкий'
-            elif self.health_index2 >=11 and self.health_index2 <=14.9:
+            elif self.health_index >=11 and self.health_index <=14.9:
                 self.health_stat = 'Удовлетворительный'
-            elif self.health_index2 >=6 and self.health_index2 <=10.9:
+            elif self.health_index >=6 and self.health_index <=10.9:
                 self.health_stat = 'Средний'
-            elif self.health_index2 >= 0.5 and self.health_index2 <=5.9:
+            elif self.health_index >= 0.5 and self.health_index <=5.9:
                 self.health_stat = 'Выше среднего'
-            elif self.health_index2 <0.4:
+            elif self.health_index <0.4:
                 self.health_stat = 'Высокий'
 
-        elif int(self.tresult.age) >= 13 and int(self.tresult.age) <=14:
-            if self.health_index2 >=16.5:
+        elif self.age >= 13 and self.age <=14:
+            if self.health_index >=16.5:
                 self.health_stat = 'Низкий'
-            elif self.health_index2 >=12.5 and self.health_index2 <=16.4:
+            elif self.health_index >=12.5 and self.health_index <=16.4:
                 self.health_stat = 'Удовлетворительный'
-            elif self.health_index2 >=7.5 and self.health_index2 <=12.4:
+            elif self.health_index >=7.5 and self.health_index <=12.4:
                 self.health_stat = 'Средний'
-            elif self.health_index2 >= 2 and self.health_index2 <=7.4:
+            elif self.health_index >= 2 and self.health_index <=7.4:
                 self.health_stat = 'Выше среднего'
-            elif self.health_index2 <1.9:
+            elif self.health_index <1.9:
                 self.health_stat = 'Высокий'
 
-        elif int(self.tresult.age) >= 11 and int(self.tresult.age) <=12:
-            if self.health_index2 >=18:
+        elif self.age >= 11 and self.age <=12:
+            if self.health_index >=18:
                 self.health_stat = 'Низкий'
-            elif self.health_index2 >=14 and self.health_index2 <=17.9:
+            elif self.health_index >=14 and self.health_index <=17.9:
                 self.health_stat = 'Удовлетворительный'
-            elif self.health_index2 >=9 and self.health_index2 <=13.9:
+            elif self.health_index >=9 and self.health_index <=13.9:
                 self.health_stat = 'Средний'
-            elif self.health_index2 >= 3.5 and self.health_index2 <=8.9:
+            elif self.health_index >= 3.5 and self.health_index <=8.9:
                 self.health_stat = 'Выше среднего'
-            elif self.health_index2 <3.4:
+            elif self.health_index <3.4:
                 self.health_stat = 'Высокий'
 
-        elif int(self.tresult.age) >= 9 and int(self.tresult.age) <=10:
-            if self.health_index2 >=19.5:
+        elif self.age >= 9 and self.age <=10:
+            if self.health_index >=19.5:
                 self.health_stat = 'Низкий'
-            elif self.health_index2 >=15.5 and self.health_index2 <=19.4:
+            elif self.health_index >=15.5 and self.health_index <=19.4:
                 self.health_stat = 'Удовлетворительный'
-            elif self.health_index2 >=10.5 and self.health_index2 <=15.4:
+            elif self.health_index >=10.5 and self.health_index <=15.4:
                 self.health_stat = 'Средний'
-            elif self.health_index2 >= 5 and self.health_index2 <=10.4:
+            elif self.health_index >= 5 and self.health_index <=10.4:
                 self.health_stat = 'Выше среднего'
-            elif self.health_index2 <4.9:
+            elif self.health_index <4.9:
                 self.health_stat = 'Высокий'
 
-        elif int(self.tresult.age) >= 7 and int(self.tresult.age) <=8:
-            if self.health_index2 >=21:
+        elif self.age >= 7 and self.age <=8:
+            if self.health_index >=21:
                 self.health_stat = 'Низкий'
-            elif self.health_index2 >=17 and self.health_index2 <=20.9:
+            elif self.health_index >=17 and self.health_index <=20.9:
                 self.health_stat = 'Удовлетворительный'
-            elif self.health_index2 >=12 and self.health_index2 <=16.9:
+            elif self.health_index >=12 and self.health_index <=16.9:
                 self.health_stat = 'Средний'
-            elif self.health_index2 >= 6.5 and self.health_index2 <=11.9:
+            elif self.health_index >= 6.5 and self.health_index <=11.9:
                 self.health_stat = 'Выше среднего'
-            elif self.health_index2 <6.4:
+            elif self.health_index <6.4:
                 self.health_stat = 'Высокий'
-    '''
+    
         
     def initUI(self):
-        self.health_index = (4*(float(self.tresult.t1)+float(self.tresult.t2)+float(self.tresult.t3))-200)/10
+        
         ''' создаёт графические элементы '''
-        self.work_text = QLabel(txt_workheart)
+        self.work_text = QLabel(txt_workheart+self.health_stat)
         self.index_text = QLabel(txt_index+str(self.health_index))
 
         self.layout_line = QVBoxLayout()
