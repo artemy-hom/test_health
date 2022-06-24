@@ -157,7 +157,7 @@ class TestWin(QWidget):
     def timer2Event(self):
         global time
         time = time.addSecs(-1)
-        self.text_timer.setText(time.toString('hh:mm:ss'))
+        self.text_timer.setText(time.toString('hh:mm:ss')[6:8])
         self.text_timer.setFont(QFont('Times',36,QFont.Bold))
         self.text_timer.setStyleSheet('color: rgb(0,0,0)')
         if time.toString('hh:mm:ss') == '00:00:00':
