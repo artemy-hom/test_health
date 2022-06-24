@@ -90,6 +90,10 @@ class FinalWin(QWidget):
         self.work_text = QLabel(txt_workheart+self.health_stat)
         self.index_text = QLabel(txt_index+str(self.health_index))
 
+
+        self.work_text.setFont(QFont('',26,QFont.Bold))
+        self.index_text.setFont(QFont('',26,QFont.Bold))
+
         self.layout_line = QVBoxLayout()
         self.layout_line.addWidget(self.index_text, alignment=Qt.AlignCenter)
         self.layout_line.addWidget(self.work_text, alignment=Qt.AlignCenter)
@@ -97,5 +101,5 @@ class FinalWin(QWidget):
 
     def set_appear(self):
         self.setWindowTitle(txt_finalwin)
-        self.resize(win_width, win_height)
+        self.resize(win_width-300, win_height-150)
         self.move(win_x, win_y)

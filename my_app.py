@@ -26,9 +26,12 @@ class MainWin(QWidget):
     def init_UI(self):
         
         self._next_button = QPushButton(nxt_button, self)
+        self._next_button.setStyleSheet("background-color : #017AFF; color : #FFFFFF")
+
 
         self.hello_text = QLabel(hi_text)
         self.rules_text = QLabel(rule_text)
+        self.hello_text.setFont(QFont('',26,QFont.Bold))
 
 
         self.line = QVBoxLayout()

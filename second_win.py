@@ -39,12 +39,25 @@ class TestWin(QWidget):
         self.btn_test3 = QPushButton(txt_starttest3, self)
         #================
 
+        self.btn_test2.setStyleSheet("background-color : #017AFF; color : #FFFFFF")
+        self.btn_test3.setStyleSheet("background-color : #017AFF; color : #FFFFFF")
+        self.btn_test1.setStyleSheet("background-color : #017AFF; color : #FFFFFF")
+        self.btn_next.setStyleSheet("background-color : #017AFF; color : #FFFFFF")
+
+        #================
+
+        self.btn_next.setFont(QFont('', 18))
+
         #================
         self.text_name = QLabel(txt_name)
         self.text_age = QLabel(txt_age)
         self.text_test1 = QLabel(txt_test1)
         self.text_test2 = QLabel(txt_test2)
         self.text_test3 = QLabel(txt_test3)
+
+        self.space1 = QLabel('')
+        self.space2 = QLabel('')
+        self.space3 = QLabel('')
 
         self.text_timer = QLabel(txt_timer)
         self.text_timer.setFont(QFont('Times',36,QFont.Bold))
@@ -71,18 +84,22 @@ class TestWin(QWidget):
 
         self.l_line.addWidget(self.text_age, alignment = Qt.AlignLeft)
         self.l_line.addWidget(self.line_age, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.space3, alignment = Qt.AlignLeft)
 
         self.l_line.addWidget(self.text_test1, alignment = Qt.AlignLeft)
         self.l_line.addWidget(self.btn_test1, alignment = Qt.AlignLeft)
         self.l_line.addWidget(self.line_test1, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.space1, alignment = Qt.AlignLeft)
 
         self.l_line.addWidget(self.text_test2, alignment = Qt.AlignLeft)
         self.l_line.addWidget(self.btn_test2, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.space2, alignment = Qt.AlignLeft)
 
         self.l_line.addWidget(self.text_test3, alignment = Qt.AlignLeft)
         self.l_line.addWidget(self.btn_test3, alignment = Qt.AlignLeft)
         self.l_line.addWidget(self.line_test2, alignment = Qt.AlignLeft)
         self.l_line.addWidget(self.line_test3, alignment = Qt.AlignLeft)
+
 
         self.r_line.addWidget(self.text_timer, alignment = Qt.AlignLeft)
 
@@ -132,10 +149,10 @@ class TestWin(QWidget):
 
     def timer_test2(self):
             global time
-            time = QTime(0,0,45)
+            time = QTime(0,0,30)
             self.timer2 = QTimer()
             self.timer2.timeout.connect(self.timer2Event)
-            self.timer2.start(1000)
+            self.timer2.start(1500)
 
     def timer2Event(self):
         global time
